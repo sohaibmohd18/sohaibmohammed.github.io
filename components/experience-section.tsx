@@ -8,7 +8,7 @@ const experiences = [
     company: "Adobe",
     location: "San Jose, CA",
     period: "May 2025 – June 2025",
-    color: "text-primary",
+    color: "text-purple-600",
     achievements: [
       "Provisioned AWS resources using AWS Controllers for Kubernetes (ACK) and Helm templates to standardize and automate deployment of AWS resources within Adobe's cloud-native ecosystem",
       "Implemented observability stack using Prometheus, Grafana, and YACE exporters, enabling high-availability metrics ingestion and granular monitoring across namespaces",
@@ -20,7 +20,7 @@ const experiences = [
     company: "Fabs IT Solutions",
     location: "Hayward, CA",
     period: "Sep 2024 – Mar 2025",
-    color: "text-secondary",
+    color: "text-green-600",
     achievements: [
       "Deployed and managed scalable AWS Infrastructure, improving system availability to 99.99%",
       "Implemented CI pipelines using Jenkins, reducing build and deployment time by 60%",
@@ -32,7 +32,7 @@ const experiences = [
     company: "Compass Group",
     location: "Hayward, CA",
     period: "Aug 2023 – May 2024",
-    color: "text-accent",
+    color: "text-yellow-600",
     achievements: [
       "Provisioned infrastructure for 20+ applications using Terraform, optimizing resource utilization and reducing manual provisioning time",
       "Implemented Argo CD for automated Kubernetes deployments, reducing deployment time by 50%",

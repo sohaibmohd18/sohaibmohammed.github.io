@@ -54,7 +54,7 @@ export function AboutSection() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
-                <div className="text-3xl font-bold text-primary mb-2">3.5+</div>
+                <div className="text-3xl font-extrabold text-primary mb-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-500">3.5+</div>
                 <div className="text-muted-foreground">Years Experience</div>
               </motion.div>
               <motion.div
@@ -62,7 +62,7 @@ export function AboutSection() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
-                <div className="text-3xl font-bold text-secondary mb-2">20+</div>
+                <div className="text-3xl font-extrabold text-secondary mb-2 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-700">20+</div>
                 <div className="text-muted-foreground">Projects Delivered</div>
               </motion.div>
             </div>
@@ -74,7 +74,7 @@ export function AboutSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="bg-gradient-to-r from-primary to-secondary p-1 rounded-xl">
+            <div className="bg-gradient-to-r from-primary to-secondary p-1 rounded-xl shadow-xl">
               <div className="bg-background rounded-lg p-6">
                 <h3 className="text-xl font-semibold mb-4">Core Expertise</h3>
                 <ul className="space-y-3">
@@ -87,7 +87,7 @@ export function AboutSection() {
                       transition={{ duration: 0.4, delay: index * 0.1 }}
                       viewport={{ once: true }}
                     >
-                      <CheckCircle className="text-secondary mr-3 h-5 w-5" />
+                      <CheckCircle className="text-green-500 text-secondary mr-3 h-5 w-15" />
                       <span className="text-foreground">{item}</span>
                     </motion.li>
                   ))}

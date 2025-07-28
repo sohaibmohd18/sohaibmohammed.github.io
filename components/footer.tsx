@@ -3,8 +3,8 @@ import { Mail, Linkedin } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-warm-gray-900 text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-background text-foreground py-12">
+      <div className="flex-1 max-w-7xl mx-auto w-full px-4 py-10">
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -46,3 +46,5 @@ export function Footer() {
     </footer>
   );
 }
+
+export default Footer;

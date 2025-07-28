@@ -56,7 +56,9 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="text-xl font-bold text-primary">
-            Sohaib Ahmed Mohammed
+            <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-500">
+              Sohaib Ahmed Mohammed
+            </h1>
           </div>
           
           {/* Desktop Navigation */}

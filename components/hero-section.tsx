@@ -34,7 +34,7 @@ export function HeroSection() {
               transition={{ duration: 0.5 }}
             >
               <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
-                Hi, I'm <span className="text-primary">Sohaib</span>
+                Hi, I'm <span className="text-primary text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-500">Sohaib</span>
               </h1>
               <p className="text-xl text-muted-foreground mt-4">
                 DevOps Engineer & Site Reliability Engineer
@@ -56,7 +56,7 @@ export function HeroSection() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <Button onClick={() => scrollToSection("contact")}> 
+              <Button onClick={() => scrollToSection("contact")} className="bg-gradient-to-r from-purple-600 to-indigo-500 text-white hover:from-purple-700 hover:to-indigo-600"> 
                 <Mail className="mr-2 h-4 w-4" /> Get In Touch
               </Button>
               <Button variant="outline" onClick={() => scrollToSection("experience")}> 

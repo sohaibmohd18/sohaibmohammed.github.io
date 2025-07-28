@@ -38,7 +38,7 @@ export function EducationSection() {
                     <h3 className="text-2xl font-bold mb-1">
                       Master of Science in Business Analytics
                     </h3>
-                    <p className="text-lg font-semibold text-primary">
+                    <p className="text-lg font-semibold text-purple-600">
                       California State University East Bay
                     </p>
                     <p className="text-muted-foreground">Hayward, CA</p>
