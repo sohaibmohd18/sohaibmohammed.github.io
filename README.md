@@ -4,7 +4,7 @@ Welcome to my personal developer portfolio – a modern, fully responsive websit
 
 ## 🌐 Live Website
 
-[https://sohaibmohammed.github.io](https://sohaibmohammed.github.io)
+[https://sohaibmohammed.xyz](https://sohaibmohammed.xyz)
 
 ---
 
