@@ -40,7 +40,7 @@ const experiences = [
     ]
   },
   {
-    title: "Application Development Associate",
+    title: "DevOps Associate",
     company: "Accenture",
     location: "Hyderabad, India",
     period: "Sep 2020 – Aug 2022",
