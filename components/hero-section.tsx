@@ -47,7 +47,7 @@ export function HeroSection() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              With 3.5+ years of experience in building and optimizing cloud infrastructure across AWS, Azure, and GCP. Passionate about automation, scalability, and delivering secure, cost-efficient solutions.
+              With over 4 years of experience in building and optimizing cloud infrastructure across AWS, Azure, and GCP. Passionate about automation, scalability, and delivering secure, cost-efficient solutions.
             </motion.p>
 
             <motion.div
