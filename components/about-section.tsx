@@ -38,7 +38,7 @@ export function AboutSection() {
           >
             <p className="text-muted-foreground text-lg leading-relaxed">
               I'm a passionate DevOps Engineer and Site Reliability Engineer with over
-              3.5 years of hands-on experience in designing, implementing, and optimizing
+              4 years of hands-on experience in designing, implementing, and optimizing
               cloud infrastructure. My expertise spans across major cloud platforms including
               AWS, Azure, and Google Cloud.
             </p>
@@ -54,7 +54,7 @@ export function AboutSection() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
-                <div className="text-3xl font-extrabold text-primary mb-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-500">3.5+</div>
+                <div className="text-3xl font-extrabold text-primary mb-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-500">4</div>
                 <div className="text-muted-foreground">Years Experience</div>
               </motion.div>
               <motion.div
