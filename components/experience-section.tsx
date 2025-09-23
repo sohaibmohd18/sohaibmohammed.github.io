@@ -7,7 +7,7 @@ const experiences = [
     title: "Infrastructure Engineer",
     company: "Adobe",
     location: "San Jose, CA",
-    period: "May 2025 – June 2025",
+    period: "May 2025 – Present",
     color: "text-purple-600",
     achievements: [
       "Provisioned AWS resources using AWS Controllers for Kubernetes (ACK) and Helm templates to standardize and automate deployment of AWS resources within Adobe's cloud-native ecosystem",
