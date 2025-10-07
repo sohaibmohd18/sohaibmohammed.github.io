@@ -12,36 +12,32 @@ export function ThemeProvider({ children, defaultTheme = "system", storageKey = 
     return localStorage.getItem(storageKey) || defaultTheme;
   });
 
-  // Apply theme to <html>
   const applyTheme = (next) => {
-    const root = document.documentElement;
+    const prefersDark =
+      typeof window !== "undefined" &&
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-    // Resolve "system" to "light"/"dark"
-    const resolved =
-      next === "system"
-        ? (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
-            ? "dark"
-            : "light")
-        : next;
+    // Determine effective theme
+    const isDark = next === "dark" || (next === "system" && prefersDark);
 
-    root.classList.remove("light", "dark");
-    root.classList.add(resolved);
+    // ✅ Only toggle 'dark'. Do NOT add 'light'
+    document.documentElement.classList.toggle("dark", isDark);
   };
 
-  // Initial mount + whenever theme changes
+  // Apply on mount and whenever theme changes
   useEffect(() => {
     applyTheme(theme);
     localStorage.setItem(storageKey, theme);
   }, [theme, storageKey]);
 
-  // React to OS theme changes, but only when user selected "system"
+  // React when OS theme changes, but only while on "system"
   useEffect(() => {
     if (!window.matchMedia) return;
     const mql = window.matchMedia("(prefers-color-scheme: dark)");
     const handler = () => {
-      if ((localStorage.getItem(storageKey) || defaultTheme) === "system") {
-        applyTheme("system");
-      }
+      const saved = localStorage.getItem(storageKey) || defaultTheme;
+      if (saved === "system") applyTheme("system");
     };
     mql.addEventListener?.("change", handler);
     return () => mql.removeEventListener?.("change", handler);
