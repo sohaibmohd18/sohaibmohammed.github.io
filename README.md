@@ -1,6 +1,6 @@
 # Sohaib Ahmed Mohammed – Portfolio Website
 
-Welcome to my personal developer portfolio – a modern, fully responsive website built using **Next.js**, **Tailwind CSS**, and **Framer Motion**, showcasing my work as a **DevOps Engineer & Site Reliability Engineer**.
+Welcome to my personal developer portfolio – a modern, fully responsive website built using **React**, **Tailwind CSS**, **JavaScript**, and **Framer Motion**, showcasing my work as a **DevOps Engineer & Site Reliability Engineer**.
 
 ## 🌐 Live Website
 
@@ -8,46 +8,72 @@ Welcome to my personal developer portfolio – a modern, fully responsive websit
 
 ---
 
-## 📌 Features
+##  Features
 
-- ⚙️ Built with **Next.js** & **TypeScript**
-- 🎨 Styled with **Tailwind CSS** and custom CSS variables
-- 🌗 Supports **light/dark theme toggle**
-- ✨ Smooth animations with **Framer Motion**
-- 📱 Fully responsive design
-- 💬 Contact form (optional API-ready setup)
-- 🚀 Deployed via GitHub Pages
+-  Built with **JavaScript**
+-  Styled with **Tailwind CSS** and custom CSS variables
+-  Supports **light/dark theme toggle**
+-  Smooth animations with **Framer Motion**
+-  Fully responsive design
+-  Contact form (optional API-ready setup)
+-  Deployed via GitHub Pages
 
 ---
 
 ## 🛠 Tech Stack
 
-- [Next.js](https://nextjs.org/)
+- [JavaScript](https://javascript.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Framer Motion](https://www.framer.com/motion/)
 - [Lucide Icons](https://lucide.dev/icons/)
 - [React Hook Form (optional)](https://react-hook-form.com/)
-- [TypeScript](https://www.typescriptlang.org/)
+
 
 ---
 
 ## 📁 Folder Structure
 
 ```
-components/        → All UI components (hero, about, footer, etc.)
-pages/             → Next.js pages (index, _app, etc.)
-styles/            → Tailwind global styles
-public/            → Static assets (images, icons)
-```
+sohaibmohammed.github.io/
+├── client/                  # Frontend (React + Vite)
+│   ├── index.html
+│   ├── package.json
+│   ├── vite.config.js
+│   ├── postcss.config.js
+│   ├── tailwind.config.js
+│   └── src/
+│       ├── main.jsx
+│       ├── App.jsx
+│       ├── components/
+│       │   ├── navigation.jsx
+│       │   ├── hero-section.jsx
+│       │   ├── about-section.jsx
+│       │   ├── experience-section.jsx
+│       │   ├── education-section.jsx
+│       │   ├── contact-section.jsx
+│       │   ├── footer.jsx
+│       │   └── ui/… (shadcn UI components)
+│       ├── hooks/
+│       ├── lib/
+│       └── styles/index.css
+│
+├── server/                  # Backend (Express + Nodemailer)
+│   ├── package.json
+│   ├── server.js
+│   ├── .env.example
+│   └── README.md
+│
+├── Dockerfile               # Production build (combined client + server)
+└── .github/workflows/       # CI/CD workflows for GitHub Pages
 
 ---
 
-## 🚀 Run Locally
+## Run Locally
 
 1. **Clone the repo**
 ```bash
-git clone https://github.com/sohaibmohammed/portfolio.git
-cd portfolio
+git clone https://github.com/sohaibmohd18/sohaibmohammed.portfolio.git
+cd sohaibmohammed.portfolio.git
 ```
 
 2. **Install dependencies**
