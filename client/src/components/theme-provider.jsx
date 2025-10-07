@@ -1,56 +1,59 @@
 // components/theme-provider.jsx
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
 const ThemeContext = createContext({
   theme: "system",
   setTheme: () => {},
 });
 
-export function ThemeProvider({
-  children,
-  defaultTheme = "system",
-  storageKey = "theme",
-}) {
-  const [theme, setThemeState] = useState(defaultTheme);
+export function ThemeProvider({ children, defaultTheme = "system", storageKey = "theme" }) {
+  const [theme, setThemeState] = useState(() => {
+    if (typeof window === "undefined") return defaultTheme;
+    return localStorage.getItem(storageKey) || defaultTheme;
+  });
 
   // Apply theme to <html>
-  const applyTheme = (newTheme) => {
+  const applyTheme = (next) => {
     const root = document.documentElement;
 
-    const resolvedTheme =
-      newTheme === "system"
-        ? window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "light"
-        : newTheme;
+    // Resolve "system" to "light"/"dark"
+    const resolved =
+      next === "system"
+        ? (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light")
+        : next;
 
     root.classList.remove("light", "dark");
-    root.classList.add(resolvedTheme);
+    root.classList.add(resolved);
   };
 
+  // Initial mount + whenever theme changes
   useEffect(() => {
-    const saved = localStorage.getItem(storageKey);
-    const initial = saved || defaultTheme;
-    setThemeState(initial);
-    applyTheme(initial);
+    applyTheme(theme);
+    localStorage.setItem(storageKey, theme);
+  }, [theme, storageKey]);
+
+  // React to OS theme changes, but only when user selected "system"
+  useEffect(() => {
+    if (!window.matchMedia) return;
+    const mql = window.matchMedia("(prefers-color-scheme: dark)");
+    const handler = () => {
+      if ((localStorage.getItem(storageKey) || defaultTheme) === "system") {
+        applyTheme("system");
+      }
+    };
+    mql.addEventListener?.("change", handler);
+    return () => mql.removeEventListener?.("change", handler);
   }, [defaultTheme, storageKey]);
 
-  const setTheme = (newTheme) => {
-    localStorage.setItem(storageKey, newTheme);
-    setThemeState(newTheme);
-    applyTheme(newTheme);
-  };
+  const value = useMemo(() => ({ theme, setTheme: setThemeState }), [theme]);
 
-  return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
 }
 
 export function useTheme() {
-  const context = useContext(ThemeContext);
-  if (!context)
-    throw new Error("useTheme must be used inside ThemeProvider");
-  return context;
+  const ctx = useContext(ThemeContext);
+  if (!ctx) throw new Error("useTheme must be used inside ThemeProvider");
+  return ctx;
 }

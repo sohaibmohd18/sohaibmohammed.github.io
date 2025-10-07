@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { useTheme } from "./theme-provider";
+import { useTheme } from "@components/theme-provider";
 import { Menu, Moon, Sun } from "lucide-react";
 
 const navigationItems = [
