@@ -1,4 +1,4 @@
-name: Deploy Vite client to GitHub Pages
+name: Deploy Web Application to GitHub Pages
 
 on:
   push:
