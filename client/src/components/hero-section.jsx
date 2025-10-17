@@ -1,7 +1,7 @@
 // components/hero-section.jsx
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Mail, Briefcase, Linkedin } from "lucide-react";
+import { Mail, Briefcase, Linkedin, Github } from "lucide-react";
 
 const techIcons = [
   { icon: "☁️", label: "AWS", delay: 0 },
@@ -33,12 +33,12 @@ export function HeroSection() {
             >
               <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
                 Hi, I'm{" "}
-                <span className="text-primary text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-500">
+                <span className="text-foreground text-7xl font-bold">
                   Sohaib
                 </span>
               </h1>
               <p className="text-xl text-muted-foreground mt-4">
-                DevOps Engineer & Site Reliability Engineer
+                DevOps and Infrastructure Engineer
               </p>
             </motion.div>
 
@@ -48,10 +48,9 @@ export function HeroSection() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              With over 4 years of experience in building and optimizing cloud
-              infrastructure across AWS, Azure, and GCP. Passionate about
-              automation, scalability, and delivering secure, cost-efficient
-              solutions.
+              Building Scalable and Reliable Cloud Infrastructure Solutions
+              for SaaS and Enterprise Applications. Passionate about automation,
+              scalability, and delivering secure, cost-efficient solutions.
             </motion.p>
 
             <motion.div
@@ -62,7 +61,7 @@ export function HeroSection() {
             >
               <Button
                 onClick={() => scrollToSection("contact")}
-                className="bg-gradient-to-r from-purple-600 to-indigo-500 text-white hover:from-purple-700 hover:to-indigo-600"
+                className="bg-foreground text-white hover:brightness-95"
               >
                 <Mail className="mr-2 h-4 w-4" /> Get In Touch
               </Button>
@@ -84,12 +83,21 @@ export function HeroSection() {
                 href="https://www.linkedin.com/in/sohaib-mohd"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-primary"
+                className="text-foreground hover:brightness-90"
               >
                 <Linkedin className="h-6 w-6" />
               </a>
-              <a href="mailto:sohaibmohd000@gmail.com" className="hover:text-primary">
+              <a href="mailto:sohaibmohd000@gmail.com" className="text-foreground hover:brightness-90">
                 <Mail className="h-6 w-6" />
+              </a>
+              <a
+                href="https://github.com/sohaibmohd18"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground hover:brightness-90"
+                aria-label="Open GitHub in new tab"
+              >
+                <Github className="h-6 w-6" />
               </a>
             </motion.div>
           </div>
@@ -99,7 +107,7 @@ export function HeroSection() {
               {techIcons.map((tech) => (
                 <motion.div
                   key={tech.label}
-                  className="bg-gradient-to-br from-primary to-primary/70 rounded-2xl flex items-center justify-center text-white text-4xl shadow hover:scale-110 transition-transform duration-300 cursor-pointer"
+                  className="bg-warm-gray-100 rounded-2xl flex items-center justify-center text-foreground text-4xl shadow-sm hover:scale-110 transition-transform duration-300 cursor-pointer"
                   initial={{ scale: 0, rotate: 180 }}
                   animate={{ scale: 1, rotate: 0 }}
                   transition={{

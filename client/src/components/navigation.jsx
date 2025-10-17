@@ -2,8 +2,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { useTheme } from "@/components/theme-provider";
-import { Menu, Moon, Sun } from "lucide-react";
+import { Menu } from "lucide-react";
 
 const navigationItems = [
   { href: "#home", label: "Home" },
@@ -16,7 +15,7 @@ const navigationItems = [
 
 export function Navigation() {
   const [activeSection, setActiveSection] = useState("home");
-  const { theme, setTheme } = useTheme();
+  // theme removed: site uses a single light theme to mimic Apple's website
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -52,8 +51,8 @@ export function Navigation() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="text-xl font-bold text-primary">
-            <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-500">
+          <div className="text-xl font-bold text-foreground">
+            <h1 className="text-2xl font-bold text-foreground">
               Sohaib Ahmed Mohammed
             </h1>
           </div>
@@ -64,10 +63,8 @@ export function Navigation() {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className={`transition-colors duration-200 hover:text-primary ${
-                  activeSection === item.href.substring(1)
-                    ? "text-primary"
-                    : "text-foreground"
+                className={`transition-colors duration-200 ${
+                  activeSection === item.href.substring(1) ? "text-foreground" : "text-foreground"
                 }`}
               >
                 {item.label}
@@ -76,21 +73,6 @@ export function Navigation() {
           </div>
 
           <div className="flex items-center space-x-4">
-            {/* Theme Toggle */}
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={toggleTheme}
-              className="transition-colors duration-200"
-              aria-label="Toggle theme"
-            >
-              {theme === "light" ? (
-                <Moon className="h-4 w-4" />
-              ) : (
-                <Sun className="h-4 w-4" />
-              )}
-            </Button>
-
             {/* Mobile Menu */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>

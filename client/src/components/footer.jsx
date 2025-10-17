@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Linkedin } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
 
 export function Footer() {
   return (
@@ -13,12 +13,12 @@ export function Footer() {
           viewport={{ once: true }}
         >
           <h3 className="text-2xl font-bold mb-4">Sohaib Ahmed Mohammed</h3>
-          <p className="text-warm-gray-300 mb-6">DevOps Engineer & Site Reliability Engineer</p>
+          <p className="text-warm-gray-300 mb-6">DevOps and Infrastructure Engineer</p>
           
           <div className="flex justify-center space-x-6 mb-8">
             <motion.a
               href="mailto:sohaibmohd000@gmail.com"
-              className="text-warm-gray-400 hover:text-primary transition-colors duration-200 text-2xl"
+              className="text-warm-gray-400 transition-colors duration-200 text-2xl"
               whileHover={{ scale: 1.1, y: -2 }}
               transition={{ duration: 0.2 }}
             >
@@ -28,11 +28,21 @@ export function Footer() {
               href="https://www.linkedin.com/in/sohaib-mohd"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-warm-gray-400 hover:text-primary transition-colors duration-200 text-2xl"
+              className="text-warm-gray-400 transition-colors duration-200 text-2xl"
               whileHover={{ scale: 1.1, y: -2 }}
               transition={{ duration: 0.2 }}
             >
               <Linkedin />
+            </motion.a>
+            <motion.a
+              href="https://github.com/sohaibmohd18"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-warm-gray-400 transition-colors duration-200 text-2xl"
+              whileHover={{ scale: 1.1, y: -2 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Github />
             </motion.a>
           </div>
           

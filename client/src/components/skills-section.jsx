@@ -6,43 +6,43 @@ const skillCategories = [
   {
     title: "AWS Cloud",
     icon: Cloud,
-    color: "text-orange-600",
-    bgColor: "bg-orange-100 dark:bg-orange-900/30",
+    color: "text-foreground",
+    bgColor: "bg-warm-gray-100",
     skills: ["EC2", "S3", "Lambda", "RDS", "EKS", "VPC", "CloudWatch", "Route 53"],
   },
   {
     title: "Azure Cloud",
     icon: Cloud,
-    color: "text-blue-600",
-    bgColor: "bg-blue-100 dark:bg-blue-900/30",
+    color: "text-foreground",
+    bgColor: "bg-warm-gray-100",
     skills: ["Azure VM", "AKS", "ACR", "Functions", "Blob Storage", "DevOps Services", "Monitor"],
   },
   {
     title: "CI/CD Tools",
     icon: GitBranch,
-    color: "text-green-600",
-    bgColor: "bg-secondary/20 dark:bg-secondary/30",
+    color: "text-foreground",
+    bgColor: "bg-warm-gray-100",
     skills: ["Jenkins", "GitHub Actions", "ArgoCD", "Circle CI", "AWS CodePipeline"],
   },
   {
     title: "Containerization",
     icon: Server,
-    color: "text-purple-600",
-    bgColor: "bg-primary/20 dark:bg-primary/30",
+    color: "text-foreground",
+    bgColor: "bg-warm-gray-100",
     skills: ["Kubernetes", "Docker", "OpenShift", "Helm Charts", "EKS", "AKS"],
   },
   {
     title: "Infrastructure as Code",
     icon: Cog,
-    color: "text-yellow-600",
-    bgColor: "bg-accent/20 dark:bg-accent/30",
+    color: "text-foreground",
+    bgColor: "bg-warm-gray-100",
     skills: ["Terraform", "Ansible", "CloudFormation", "Chef", "Puppet"],
   },
   {
     title: "Monitoring & Observability",
     icon: Activity,
-    color: "text-red-600",
-    bgColor: "bg-red-100 dark:bg-red-900/30",
+    color: "text-foreground",
+    bgColor: "bg-warm-gray-100",
     skills: ["Prometheus", "Grafana", "Datadog", "Splunk", "ELK Stack", "Kibana"],
   },
 ];
@@ -69,8 +69,8 @@ export function SkillsSection() {
             const IconComponent = category.icon;
             return (
               <motion.div
-                key={category.title}
-                className="bg-card rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300"
+                  key={category.title}
+                  className="card-apple p-6 transition-all duration-300 hover:shadow-lg"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -78,7 +78,7 @@ export function SkillsSection() {
                 whileHover={{ scale: 1.02, y: -5 }}
               >
                 <div className="flex items-center mb-4">
-                  <div className={`p-3 ${category.bgColor} rounded-lg mr-4`}>
+                    <div className={`p-3 ${category.bgColor} rounded-full mr-4`}>
                     <IconComponent className={`text-2xl ${category.color} h-6 w-6`} />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground">
@@ -89,7 +89,7 @@ export function SkillsSection() {
                   {category.skills.map((skill, skillIndex) => (
                     <motion.span
                       key={skill}
-                      className="px-3 py-1 bg-muted text-foreground rounded-full text-sm transition-colors hover:bg-primary hover:text-primary-foreground"
+                      className="px-3 py-1 bg-muted text-foreground rounded-full text-sm transition-colors hover:bg-warm-gray-200"
                       initial={{ opacity: 0, scale: 0 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{

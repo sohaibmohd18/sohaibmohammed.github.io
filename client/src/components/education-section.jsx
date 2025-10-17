@@ -15,7 +15,7 @@ export function EducationSection() {
         >
           <h2 className="text-4xl font-bold mb-2">Education</h2>
           <p className="text-lg text-muted-foreground">
-            Academic background and qualifications
+            My Academic Background
           </p>
         </motion.div>
 
@@ -31,14 +31,14 @@ export function EducationSection() {
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
               <div>
                 <div className="flex items-center mb-4">
-                  <div className="p-3 bg-primary/10 rounded-lg mr-4">
-                    <GraduationCap className="text-primary h-8 w-8" />
+                  <div className="p-3 bg-warm-gray-100 rounded-lg mr-4">
+                    <GraduationCap className="text-foreground h-8 w-8" />
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold mb-1">
                       Master of Science in Business Analytics
                     </h3>
-                    <p className="text-lg font-semibold text-purple-600">
+                    <p className="text-lg font-semibold text-foreground">
                       California State University East Bay
                     </p>
                     <p className="text-muted-foreground">Hayward, CA</p>

@@ -4,11 +4,12 @@ import { CheckCircle } from "lucide-react";
 
 const expertise = [
   "Cloud Infrastructure (AWS, Azure, GCP)",
-  "CI/CD Pipeline Implementation",
   "Kubernetes & Container Orchestration",
+  "CI/CD Pipelines (Jenkins, GitHub Actions, ArgoCD)",
   "Infrastructure as Code (Terraform, Ansible)",
-  "Monitoring & Observability",
-  "Site Reliability Engineering",
+  "Monitoring (Prometheus, Grafana)",
+  "Databases (MySQL, PostgreSQL, MongoDB)",
+  "Security (IAM, Network Security, Compliance, Okta)",
 ];
 
 export function AboutSection() {
@@ -37,13 +38,13 @@ export function AboutSection() {
             viewport={{ once: true }}
           >
             <p className="text-muted-foreground text-lg leading-relaxed">
-              I'm a passionate DevOps Engineer and Site Reliability Engineer with over
-              4 years of hands-on experience in designing, implementing, and optimizing
-              cloud infrastructure. My expertise spans across major cloud platforms including
-              AWS, Azure, and Google Cloud.
+              DevOps and Infrastructure Engineer with over 4 years of experience in designing,
+              implementing, and managing cloud-based solutions. Skilled in leveraging modern
+              DevOps practices to enhance deployment efficiency, system reliability, and
+              operational excellence.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              I specialize in automating deployments, managing containerized applications
+              I specialize in automating deployments, managing containerized workloads
               with Kubernetes and Docker, and utilizing Infrastructure as Code (IaC) tools
               such as Terraform and Ansible. My goal is to drive efficient, scalable, and
               secure cloud solutions that contribute to organizational success.
@@ -54,7 +55,7 @@ export function AboutSection() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
-                <div className="text-3xl font-extrabold text-primary mb-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-500">4</div>
+                <div className="text-3xl font-extrabold text-foreground mb-2">4</div>
                 <div className="text-muted-foreground">Years Experience</div>
               </motion.div>
               <motion.div
@@ -62,8 +63,8 @@ export function AboutSection() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
-                <div className="text-3xl font-extrabold text-secondary mb-2 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-700">20+</div>
-                <div className="text-muted-foreground">Projects Delivered</div>
+                <div className="text-3xl font-extrabold text-foreground mb-2">99.9%</div>
+                <div className="text-muted-foreground">Uptime</div>
               </motion.div>
             </div>
           </motion.div>
@@ -74,8 +75,8 @@ export function AboutSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="bg-gradient-to-r from-primary to-secondary p-1 rounded-xl shadow-xl">
-              <div className="bg-background rounded-lg p-6">
+            <div className="p-1 rounded-xl shadow-xl">
+              <motion.div className="bg-background rounded-lg p-6" whileHover={{ scale: 1.02, y: -5 }} transition={{ duration: 0.25 }}>
                 <h3 className="text-xl font-semibold mb-4">Core Expertise</h3>
                 <ul className="space-y-3">
                   {expertise.map((item, index) => (
@@ -87,12 +88,12 @@ export function AboutSection() {
                       transition={{ duration: 0.4, delay: index * 0.1 }}
                       viewport={{ once: true }}
                     >
-                      <CheckCircle className="text-green-500 text-secondary mr-3 h-5 w-15" />
+                      <CheckCircle className="text-green-500 mr-3 h-5 w-5" />
                       <span className="text-foreground">{item}</span>
                     </motion.li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>

@@ -12,10 +12,6 @@ export default function App() {
   return (
     <ThemeProvider defaultTheme="system" storageKey="theme">
       <Navigation />
-
-      <div className="p-6 rounded-lg bg-background text-foreground border border-border">
-        Background + Foreground + Border should flip with dark mode.
-      </div>
       <main>
         <HeroSection />
         <AboutSection />

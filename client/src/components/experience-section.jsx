@@ -8,11 +8,11 @@ const experiences = [
     company: "Adobe",
     location: "San Jose, CA",
     period: "May 2025 – Present",
-    color: "text-purple-600",
+  color: "text-foreground",
     achievements: [
+      "Architected and implemented a multi-cluster Kubernetes environment using EKS, enhancing application scalability and resilience",
       "Provisioned AWS resources using AWS Controllers for Kubernetes (ACK) and Helm templates to standardize and automate deployment of AWS resources within Adobe's cloud-native ecosystem",
-      "Implemented observability stack using Prometheus, Grafana, and YACE exporters, enabling high-availability metrics ingestion and granular monitoring across namespaces",
-      "Automated infrastructure deployment workflows, reducing manual intervention by 60% and improving deployment consistency across multi-cluster Kubernetes environments"
+      "Architected highly available observability stack using Prometheus, Grafana, and Alert Manager, enabling high-availability metrics ingestion and granular monitoring across namespaces",
     ]
   },
   {
@@ -20,11 +20,11 @@ const experiences = [
     company: "Fabs IT Solutions",
     location: "Hayward, CA",
     period: "Sep 2024 – Mar 2025",
-    color: "text-green-600",
+  color: "text-foreground",
     achievements: [
-      "Deployed and managed scalable AWS Infrastructure, improving system availability to 99.99%",
-      "Implemented CI pipelines using Jenkins, reducing build and deployment time by 60%",
-      "Automated backend infrastructure provisioning for 15+ microservices using Terraform modules, reducing manual setup time by 80%"
+      "Automated incident response workflows and runbooks using Python scripts and Ansible playbooks,reducing manual intervention",
+      "Improved application performance and reduced latency by 40% through systematic analysis of bottlenecks, optimization of database",
+      "Established SLO/SLI monitoring framework and error budget policies for 12+ critical microservices",
     ]
   },
   {
@@ -32,11 +32,11 @@ const experiences = [
     company: "Compass Group",
     location: "Hayward, CA",
     period: "Aug 2023 – May 2024",
-    color: "text-yellow-600",
+  color: "text-foreground",
     achievements: [
-      "Provisioned infrastructure for 20+ applications using Terraform, optimizing resource utilization and reducing manual provisioning time",
+      "Built and optimized CI/CD pipelines using Jenkins and GitHub for 25+ microservices, reducing deployment times by 45%",
+      "Automated infrastructure provisioning for multi-environment deployments using Terraform and Ansible across AWS cloud",
       "Implemented Argo CD for automated Kubernetes deployments, reducing deployment time by 50%",
-      "Maintained 99.9% uptime through regular health checks and load balancer configuration"
     ]
   },
   {
@@ -44,11 +44,11 @@ const experiences = [
     company: "Accenture",
     location: "Hyderabad, India",
     period: "Sep 2020 – Aug 2022",
-    color: "text-purple-600",
+  color: "text-foreground",
     achievements: [
-      "Migrated on-premises infrastructure to AWS, reducing operational costs by 40%",
-      "Managed multi-stage CI/CD pipelines using Jenkins, integrating security scanning and automated testing",
-      "Implemented monitoring solutions using Prometheus and Grafana, improving issue detection time by 40%"
+      "Streamlined CI/CD pipelines for banking applications using Jenkins, GitHub, and AWS, reducing deployment times",
+      "Implemented containerization strategy using Docker and Kubernetes for 20+ microservice supporting core banking platforms",
+      "Enhanced security posture and compliance monitoring by integrating automated vulnerability scanning"
     ]
   }
 ];
@@ -66,7 +66,7 @@ export function ExperienceSection() {
         >
           <h2 className="text-4xl font-bold mb-2">Professional Experience</h2>
           <p className="text-lg text-muted-foreground">
-            My journey in DevOps and Site Reliability Engineering
+            My journey in DevOps and Infrastructure Engineering
           </p>
         </motion.div>
 
@@ -112,7 +112,7 @@ export function ExperienceSection() {
                       dangerouslySetInnerHTML={{
                         __html: achievement.replace(
                           /(\d+%)/g,
-                          '<span class="font-semibold text-accent">$1</span>'
+                          '<span class="font-semibold text-foreground">$1</span>'
                         ),
                       }}
                     />
